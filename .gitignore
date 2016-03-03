@@ -1,2 +1,6 @@
 *.o
 *.sw[po]
+stack_*
+exploit
+badfile
+call_shellcode
