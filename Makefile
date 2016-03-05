@@ -30,6 +30,9 @@ exploit: exploit.c
 badfile: exploit
 	./exploit
 
+shellcode.bin: shellcode.s
+	nasm -f bin -o $@ $^
+
 clean:
 	rm -f stack_* badfile exploit call_shellcode
 
