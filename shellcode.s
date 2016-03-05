@@ -1,6 +1,5 @@
+; 32-bit mode. otherwise got wonky results (0x66 spammed in binary)
 bits 32
-; 24 nops
-;times 24 nop
 
 ; jump to 0xbffff148 + 50
 times 10 dd 0xbffff17a
