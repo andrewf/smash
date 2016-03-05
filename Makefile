@@ -3,22 +3,27 @@
 all: stack_none stack_noexecstack stack_sp stack_both badfile call_shellcode
 
 stack_none: stack.c
-	gcc -o $@ -fno-stack-protector -z execstack $^
+	sudo gcc -o $@ -fno-stack-protector -z execstack $^
+	sudo chmod 4755 $@
 
 # version that prevents executing stack
 stack_noexecstack: stack.c
-	gcc -o $@ -fno-stack-protector $^
+	sudo gcc -o $@ -fno-stack-protector $^
+	sudo chmod 4755 $@
 
 # version that has stack protector
 stack_sp: stack.c
-	gcc -o $@ -z execstack $^
+	sudo gcc -o $@ -z execstack $^
+	sudo chmod 4755 $@
 
 # version that has both protections
 stack_both: stack.c
-	gcc -o $@ $^
+	sudo gcc -o $@ $^
+	sudo chmod 4755 $@
 
 call_shellcode: call_shellcode.c
-	gcc -o $@ -z execstack -fno-stack-protector $^
+	sudo gcc -o $@ -z execstack -fno-stack-protector $^
+	sudo chmod 4755 $@
 
 exploit: exploit.c
 
