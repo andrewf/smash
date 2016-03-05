@@ -24,3 +24,7 @@ exploit: exploit.c
 
 badfile: exploit
 	./exploit
+
+clean:
+	rm -f stack_* badfile exploit call_shellcode
+
