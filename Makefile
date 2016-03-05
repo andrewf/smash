@@ -1,6 +1,6 @@
 .PHONY: clean
 
-all: stack_none stack_noexecstack stack_sp stack_both badfile call_shellcode
+all: stack_none stack_noexecstack stack_sp stack_both badfile call_shellcode shellcode.bin
 
 stack_none: stack.c
 	sudo gcc -o $@ -fno-stack-protector -z execstack $^
