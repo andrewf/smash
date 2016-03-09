@@ -27,8 +27,8 @@ call_shellcode: call_shellcode.c
 
 exploit: exploit.c
 
-badfile: exploit
-	./exploit
+badfile: shellcode.bin
+	cp shellcode.bin badfile
 
 shellcode.bin: shellcode.s
 	nasm -f bin -o $@ $^
