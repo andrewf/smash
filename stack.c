@@ -21,6 +21,8 @@ int main(int argc, char **argv)
     char str[517];
     FILE *badfile;
 
+    printf("stack var %08x\n", (unsigned)(&str));
+
     badfile = fopen("badfile", "r");
     fread(str, sizeof(char), 517, badfile);
     bof(str);
